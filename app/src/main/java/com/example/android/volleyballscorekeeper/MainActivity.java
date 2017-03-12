@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
 
     int scoreTeamA = 0;
@@ -18,10 +19,34 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // Saves variables in Bundle SavedInstanceState
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("ScoreTeamA", scoreTeamA);
+        outState.putInt("ScoreTeamB", scoreTeamB);
+        outState.putInt("SetsTeamA", setsTeamA);
+        outState.putInt("SetsTeamB", setsTeamB);
+    }
+
+    //Gets variables from savedInstanceState and displays them again
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scoreTeamA = savedInstanceState.getInt("ScoreTeamA");
+        scoreTeamB = savedInstanceState.getInt("ScoreTeamB");
+        setsTeamA = savedInstanceState.getInt("SetsTeamA");
+        setsTeamB = savedInstanceState.getInt("SetsTeamB");
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+        displaySetsForTeamA(setsTeamA);
+        displaySetsForTeamB(setsTeamB);
+    }
+
     /**
      * This method is called when the +1 score button is pressed for Team A
      */
-    public void onePointForTeamA(View v)  {
+    public void onePointForTeamA(View v) {
         scoreTeamA = scoreTeamA + 1;
         displayForTeamA(scoreTeamA);
     }
@@ -102,3 +127,5 @@ public class MainActivity extends AppCompatActivity {
         scoreView.setText(String.valueOf(score));
     }
 }
+
+
