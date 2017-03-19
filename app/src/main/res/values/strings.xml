@@ -5,7 +5,6 @@
     <string name="starting_score_all">0</string>
     <string name="add_one_point_button">+ 1 point</string>
     <string name="sets_won">Sets</string>
-
     <string name="add_one_set_button">+ 1 set</string>
     <string name="reset_scores">reset</string>
 </resources>
