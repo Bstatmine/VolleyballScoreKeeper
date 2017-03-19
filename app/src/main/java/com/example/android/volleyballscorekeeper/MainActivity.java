@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     int setsTeamB = 0;
 
     TextView scoreView;
+
     TextView scoreView2;
     TextView scoreView3;
     TextView scoreView4;
