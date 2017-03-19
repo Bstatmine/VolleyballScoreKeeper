@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context="com.example.android.volleyballscorekeeper.MainActivity">
 
@@ -111,7 +111,7 @@
                     android:id="@+id/team_b_sets"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center|bottom"
+                    android:layout_gravity="center|top"
                     android:layout_marginEnd="@dimen/button_sets_margin_right"
                     android:layout_marginStart="@dimen/button_margin_left_right"
                     android:layout_marginTop="@dimen/button_margin_top"
@@ -122,6 +122,8 @@
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/button_margin_left_right"
+                    android:layout_marginStart="@dimen/button_margin_left_right"
                     android:layout_marginTop="@dimen/button_margin_top"
                     android:onClick="oneSetForTeamB"
                     android:text="@string/add_one_set_button" />

@@ -9,14 +9,24 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     int scoreTeamA = 0;
-    int scoreTeamB = 0;
     int setsTeamA = 0;
+    int scoreTeamB = 0;
     int setsTeamB = 0;
+
+    TextView scoreView;
+    TextView scoreView2;
+    TextView scoreView3;
+    TextView scoreView4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        scoreView = (TextView) findViewById(R.id.team_a_score);
+        scoreView2 = (TextView) findViewById(R.id.team_a_sets);
+        scoreView3 = (TextView) findViewById(R.id.team_b_score);
+        scoreView4 = (TextView) findViewById(R.id.team_b_sets);
     }
 
     // Saves variables in Bundle SavedInstanceState
@@ -98,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Team A
      */
     public void displayForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_score);
         scoreView.setText(String.valueOf(score));
     }
 
@@ -106,8 +115,7 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given sets for Team A
      */
     public void displaySetsForTeamA(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_sets);
-        scoreView.setText(String.valueOf(score));
+        scoreView2.setText(String.valueOf(score));
     }
 
 
@@ -115,17 +123,18 @@ public class MainActivity extends AppCompatActivity {
      * Displays the given score for Team B
      */
     public void displayForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_score);
-        scoreView.setText(String.valueOf(score));
+        scoreView3.setText(String.valueOf(score));
     }
 
     /**
      * Displays the given sets for Team B
      */
     public void displaySetsForTeamB(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_sets);
-        scoreView.setText(String.valueOf(score));
+        scoreView4.setText(String.valueOf(score));
     }
+
+
 }
+
 
 
